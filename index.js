@@ -1,8 +1,8 @@
 var fs = require("fs");
 var readline = require('readline');
-var d3 = require("d3");
 
 var parseCodebook = require("./lib/codebook");
+//var weightedMedian = require("./lib/weightedMedian");
 
 var opts = require('minimist')(process.argv.slice(2));
 
@@ -13,6 +13,12 @@ var codebook = fs.readFileSync(opts._[0] + ".cbk", "utf8"),
 /****** PARSE THE CODEBOOK *******/
 
 var cb = parseCodebook(codebook);
+
+//weightedMedian([ [1300,4], [900,8], [1600,1],[1000,7] ]);
+
+//return;
+
+
 
 var ageBuckets = [
 	[ 17, "Under 18" ],
@@ -156,6 +162,9 @@ rl.on('line', function(line) {
 });
 
 rl.on("close", function() {
+
+	outstream.write(buffer);
+
 	var end = new Date().getTime(),
 		delta = Math.round((end - start) / 1000);
 

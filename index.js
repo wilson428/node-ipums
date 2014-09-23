@@ -8,7 +8,7 @@ var opts = require('minimist')(process.argv.slice(2));
 
 var codebook = fs.readFileSync(opts._[0] + ".cbk", "utf8"),
 	instream = fs.createReadStream(opts._[0] + ".dat", { encoding: 'utf8' }),
-	outstream = fs.createWriteStream(opts._[0] + "_refined.csv");
+	outstream = fs.createWriteStream(opts._[0] + "_refined.tsv");
 
 /****** PARSE THE CODEBOOK *******/
 
@@ -27,8 +27,7 @@ var ageBuckets = [
 	[ 30, "26-30"    ],
 	[ 35, "31-35"    ],
 	[ 40, "36-40"    ],
-	[ 45, "41-45"    ],
-	[ 50, "46-50"    ],
+	[ 50, "41-50"    ],
 	[ 64, "51-64"    ],
 	[ 200, "65+"   ]
 ];
@@ -67,7 +66,7 @@ if (opts.reduce) {
 }
 
 
-outstream.write(fields.join(",") + "\n");
+outstream.write(fields.join("\t") + "\n");
 
 var start = new Date().getTime();
 
@@ -123,7 +122,7 @@ rl.on('line', function(line) {
 	datum.AGEGROUP = { val: bucketLookup.age[datum.AGE.valStr] };
 	datum.EDUGROUP = { val: bucketLookup.education[datum.EDUCD.valStr] };
 
-	buffer += fields.map(function(d) { return datum[d].val; }).join(",") + "\n";
+	buffer += fields.map(function(d) { return datum[d].val; }).join("\t") + "\n";
 
 	total += 1;
 	if (total % 1000 === 0) {

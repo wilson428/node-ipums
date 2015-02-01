@@ -1,0 +1,78 @@
+{
+	"age": {
+		"field": "AGE",
+		"buckets": [
+			[  0, 17, "Under 18" ],
+			[ 18, 21, "18-21"    ],
+			[ 22, 25, "22-25"    ],
+			[ 26, 30, "26-30"    ],
+			[ 31, 35, "31-35"    ],
+			[ 36, 40, "36-40"    ],
+			[ 41, 50, "41-50"    ],
+			[ 51, 64, "51-64"    ],
+			[ 65, 200, "65+"   	 ]
+		]
+	},
+	"age_census": {
+		"field": "AGE",
+		"buckets": [
+			[ 0, 24, "0-24"    ],
+			[ 25, 44, "25-44"    ],
+			[ 45, 64, "45-64"    ],
+			[ 65, 200, "65+"   	 ]
+		]
+	},
+	"age_over18": {
+		"field": "AGE",
+		"buckets": [
+			[ 0, 17, "Under 18"    ]
+		]
+	},
+	"education": {
+		"field": "EDUCD",
+		"buckets": [
+			[  0, 61, "Less than high school" ],
+			[ 62, 64, "High school or equivalent"    ],
+			[ 65, 80, "Some college, no degree"    ],
+			[ 81, 83, "Associate's degree"    ],
+			[ 101, 101, "Bachelor's degree"    ],
+			[ 114, 114, "Master's degree"    ],
+			[ 115, 115, "Professional degree"    ],
+			[ 116, 116, "Doctoral degree"    ]
+		]
+	},
+	"marriage": {
+		"field": "MARST",
+		"buckets": [
+			[1, 2, "Married"],
+			[3, 4, "Separated or Divorced"],
+			[5, 5, "Widowed"],
+			[6, 6, "Never married"]
+		]
+	},
+	"employed": {
+		"field": "WKSWORK2",
+		"buckets": [
+			[0,0,"N/A"],
+			[1,4,"Part of year"],
+			[5,6,"All year"]
+		]
+	},
+	"race": {
+		"field": "RACE",
+		"buckets": [
+			[1,1, "White"],
+			[2,2, "Black"],
+			[3,3, "American Indian"],
+			[4,6, "Asian"],
+			[7,9, "Multiracial"]
+		]
+	},
+	"hispanic": {
+		"field": "HISPAN",
+		"buckets": [
+			[0, 0, "No"],
+			[1, 4, "Yes"]
+		]
+	}
+}

@@ -22,8 +22,8 @@
     "url": "https://github.com/TimeMagazine/node-ipums/issues"
   },
   "dependencies": {
-      "readline": "*",
-      "minimist": "*"
+    "minimist": "*",
+    "node-stream-csv": "0.0.1"
   },
   "homepage": "https://github.com/TimeMagazine/node-ipums"
 }

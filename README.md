@@ -26,7 +26,7 @@ The data file you need is compressed, so go ahead and extract it:
 If you have a look at the above file, you'll see it doesn't make a tremendous amount of sense to the naked eye:
 
 	head -n 5 test/usa_00028.dat
-	#yields:
+	
 	2013010000000100000065004000100000065002019607071
 	2013010000000200000051001000100000051002055108081
 	2013010000000200000051001000200000062001056106063
@@ -81,7 +81,7 @@ This will take about a minute to run -- we've got 3 million rows to crunch throu
 Let's have a look:
 
 	head -n 5 test/usa_00028.tsv
-	#yields
+	
 	YEAR	SERIAL	HHWT	GQ	PERWT	SEX	AGE	MARST	EDUC	EDUCD
 	2013	1	6500	Other group quarters	65	Female	19	Never married/single	1 year of college	1 or more years of college credit, no degree
 	2013	2	5100	Households under 1970 definition	51	Female	55	Married, spouse present	2 years of college	Associate's degree, type not specified
@@ -99,7 +99,7 @@ In many cases, the data we get from IPUMS is more granular than we need. ([Sound
 Let's see what that did:
 
 	head -n 5 test/usa_00028.tsv
-	#yields
+	
 	YEAR	SERIAL	HHWT	GQ	PERWT	SEX	MARST	EDUC	age_group	education_group
 	2013	1	6500	Other group quarters	65	Female	Never married/single	1 year of college	18-21	Some college, no degree
 	2013	2	5100	Households under 1970 definition	51	Female	Married, spouse present	2 years of college	51-64	Associate's degree

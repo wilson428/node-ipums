@@ -3,6 +3,8 @@ node-ipums
 
 Parse IPUMS files with Node to create clean, human-readable data files.
 
+[![Build Status](https://travis-ci.org/TimeMagazine/node-ipums.png)](https://travis-ci.org/TimeMagazine/node-ipums)
+
 ### Installing
 
 Clone this repo and install dependencies:
@@ -26,7 +28,7 @@ The data file you need is compressed, so go ahead and extract it:
 If you have a look at the above file, you'll see it doesn't make a tremendous amount of sense to the naked eye:
 
 	head -n 5 test/usa_00028.dat
-	
+
 	2013010000000100000065004000100000065002019607071
 	2013010000000200000051001000100000051002055108081
 	2013010000000200000051001000200000062001056106063

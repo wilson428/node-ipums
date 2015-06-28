@@ -25,7 +25,8 @@
 	"age_over18": {
 		"field": "AGE",
 		"buckets": [
-			[ 0, 17, "Under 18"    ]
+			[ 0, 17, "Under 18"    ],
+			[ 18, 200, "Over 18"    ]			
 		]
 	},
 	"education": {

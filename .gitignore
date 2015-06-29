@@ -31,4 +31,5 @@ node_modules
 
 data
 
-test/usa_00028*
+test/usa_00028.dat
+test/usa_00028.tsv

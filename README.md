@@ -96,7 +96,7 @@ As you see, the script applied the codebook definitions to each line of the file
 
 In many cases, the data we get from IPUMS is more granular than we need. ([Sounds like one of them good problems](http://www.quickmeme.com/img/53/53ae44a3552229814206def5de7a2dbc62a8a5d7e8cea1d1a62927b6d9093244.jpg).) For your purposes, you may want to combine fields like age into ranges of values (or "buckets"), like 18-21, 22-25, and so forth. To do so, you pass a `buckets` parameter:
 
-	node index.js /Users/myusername/Downloads/usa_00001 --buckets=age,education
+	node index.js csv test/usa_00028 --buckets=age,education
 
 Let's see what that did:
 
@@ -133,10 +133,57 @@ By default, the script deletes the original value's column after bucketing it. I
 
 You can eliminate fields from the original IPUMs file by passing them to the `ignore` parameter:
 
-	node index.js /Users/myusername/Downloads/usa_00011 --ignore=AGE,SEX
+	node index.js csv test/usa_00028 --ignore=AGE,SEX
 
 By default, we also delete the `DATANUM` and `PERNUM` fields, which are not terribly useful. (This is not to be confused with the `PERWT` value, a very useful weighting variable.)
 
 ### Patience
 
 This script can churn through 15 million lines in about 300 seconds. You can adjust the number of lines it buffers before writing (10,000, by default) with `--buffer`.
+
+## Working with extracted data
+
+Okay, so now we have a `.tsv` file with verbose field names and nice delimiters, but it's even larger than the original file! 
+
+At this point, each line in the outputted file still represents an individual respondent. (Well, technically it represents a group of people with the same characteristics, as specified by the PERWT variable.) 
+
+But you probably don't ultimately want unit-level data. You want to group all these individuals by a combination of traits. For that, we have the [`lib/group.js`](lib/group.js) script. You pass it the variables you want to group by, and it returns a count of the number of people which each unique combination of those traits plus the total weight for that demographic.
+
+	node index.js group test/usa_00028 --vars=SEX,education_group
+	#Wrote grouped JSON file to test/usa_00028_grouped.json
+	#Wrote grouped TSV file to test/usa_00028_grouped.tsv
+
+Let's see what we got: 
+
+	head -n 5 test/usa_00028_grouped.tsv
+
+	SEX	education_group	count	population
+	Female	Some college, no degree	302265	30144353
+	Female	Associate's degree	109025	10614612
+	Male	High school or equivalent	343733	34391610
+	Male	Some college, no degree	270400	27359273
+
+The whole file contains every unique combination of gender and education level (using the 'education_group' field we made earlier using buckets.) The script helpfully delivers this as both a tab-delimited file and a JSON file.
+
+### Adding an "ALL" field
+
+Sometimes it's useful to know the entire population for a certain field in addition to how it breaks down along some other set of variables. Passing `--combos` to the script will add an "ALL" column for every variable:
+
+	node index.js group test/usa_00028 --vars=SEX,education_group --combos
+
+	head -n 10 test/usa_00028_grouped.tsv
+	
+	SEX	education_group	count	population
+	Female	Some college, no degree	302265	30144353
+	Female	ALL	1604061	160536555
+	ALL	Some college, no degree	572665	57503626
+	ALL	ALL	3132795	316128839
+	Female	Associate's degree	109025	10614612
+	ALL	Associate's degree	189705	18603188
+	Male	High school or equivalent	343733	34391610
+	Male	ALL	1528734	155592284
+	ALL	High school or equivalent	696990	68448266
+
+As you see, there's now every combination of variables including an "ALL" option for each column. We're delighted to see that the population value when both columns are ALL is 316128839 -- just about the population of the country, as we would expect.
+
+

@@ -9,8 +9,7 @@ if (args._.length < 2) {
 
 var commands = {
 	csv: require("./lib/csv"),
-	nest: require("./lib/nest")
-	//sqlite: require("./lib/sqlite")
+	group: require("./lib/group")
 }
 
 if (commands[args._[0].toLowerCase()]) {

@@ -141,6 +141,16 @@ By default, we also delete the `DATANUM` and `PERNUM` fields, which are not terr
 
 This script can churn through 15 million lines in about 300 seconds. You can adjust the number of lines it buffers before writing (10,000, by default) with `--buffer`.
 
+## Important note on PUMAs
+If you've selected `PUMA` as one of your variables, you'll get a integer that refers only to the PUMA's ID within its state. This integer is often missing leading zeros. Actual PUMA codes are always five digits and need to be prepended with the two-digit FIPS code for the state, as [IPUMs documents in the variable description](https://usa.ipums.org/usa-action/variables/PUMA#description_section).
+
+To get a correct seven-digit PUMA code, all you need to do is include the variable `STATEFIP` in you data extract and pass `--full_pumas` to the command-line when running the initial CSV script, like so:
+
+	node index.js csv /Users/myname/Downloads/00051 --full_pumas
+
+Note: PUMAs have names, which you can find in [pumas.json](pumas.json). They tend to be long, like "New Castle County (South)--Middletown Town, Bear & Glasgow PUMA; Delaware," so it would dramatically increase the file size to include them. But they're here if you need them.
+
+
 ## Working with extracted data
 
 Okay, so now we have a `.tsv` file with verbose field names and nice delimiters, but it's even larger than the original file! 

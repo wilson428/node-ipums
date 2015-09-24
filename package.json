@@ -1,6 +1,6 @@
 {
   "name": "node-ipums",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Parse IPUMS responses with node",
   "main": "index.js",
   "scripts": {

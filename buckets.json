@@ -1,6 +1,6 @@
 {
 	"age": {
-		"fields": "AGE",
+		"field": "AGE",
 		"buckets": [
 			[  0, 17, "Under 18" ],
 			[ 18, 21, "18-21"    ],
@@ -14,7 +14,7 @@
 		]
 	},
 	"age_census": {
-		"fields": "AGE",
+		"field": "AGE",
 		"buckets": [
 			[ 0, 24, "0-24"    ],
 			[ 25, 44, "25-44"    ],
@@ -23,7 +23,7 @@
 		]
 	},
 	"age_dating": {
-		"fields": "AGE",
+		"field": "AGE",
 		"buckets": [
 			[ 0,  17,  "0-17" ],
 			[ 18, 30, "18-30" ],
@@ -33,7 +33,7 @@
 		]
 	},
 	"age_10yrs": {
-		"fields": "AGE",
+		"field": "AGE",
 		"buckets": [
 			[ 0,  9,  "0-9" ],
 			[ 10, 19, "10-19" ],
@@ -47,32 +47,31 @@
 		]
 	},
 	"age_over18": {
-		"fields": "AGE",
+		"field": "AGE",
 		"buckets": [
 			[ 0, 17, "Under 18"    ],
 			[ 18, 200, "18 and over"    ]			
 		]
 	},
 	"age_over21": {
-		"fields": "AGE",
+		"field": "AGE",
 		"buckets": [
 			[ 0, 20, "Under 21"    ],
 			[ 21, 200, "21 and over"    ]			
 		]
 	},
 	"age_over65": {
-		"fields": "AGE",
+		"field": "AGE",
 		"buckets": [
 			[ 0, 64, "Under 64"    ],
 			[ 65, 200, "65 and over"    ]			
 		]
 	},
 	"education": {
-		"fields": "EDUCD",
+		"field": "EDUCD",
 		"buckets": [
 			[  0, 61, "Less than high school" ],
-			[ 62, 64, "High school or equivalent"    ],
-			[ 65, 80, "Some college, no degree"    ],
+			[ 62, 80, "High school or equivalent"    ],
 			[ 81, 83, "Associate's degree"    ],
 			[ 101, 101, "Bachelor's degree"    ],
 			[ 114, 114, "Master's degree"    ],
@@ -81,14 +80,14 @@
 		]
 	},
 	"college": {
-		"fields": "EDUCD",
+		"field": "EDUCD",
 		"buckets": [
 			[  0, 80, "No college degree" ],
 			[ 81, 116, "College degree"    ]
 		]
 	},
 	"marriage": {
-		"fields": "MARST",
+		"field": "MARST",
 		"buckets": [
 			[1, 2, "Married"],
 			[3, 4, "Separated or Divorced"],
@@ -97,14 +96,14 @@
 		]
 	},
 	"married": {
-		"fields": "MARST",
+		"field": "MARST",
 		"buckets": [
 			[1, 2, "Married"],
 			[3, 6, "Not married"]
 		]
 	},
 	"employed": {
-		"fields": "WKSWORK2",
+		"field": "WKSWORK2",
 		"buckets": [
 			[0,0,"N/A"],
 			[1,4,"Part of year"],
@@ -112,7 +111,7 @@
 		]
 	},
 	"race": {
-		"fields": "RACE",
+		"field": "RACE",
 		"buckets": [
 			[1,1, "White"],
 			[2,2, "Black"],
@@ -122,14 +121,14 @@
 		]
 	},
 	"hispanic": {
-		"fields": "HISPAN",
+		"field": "HISPAN",
 		"buckets": [
 			[0, 0, "No"],
 			[1, 4, "Yes"]
 		]
 	},
 	"income": {
-		"fields": "INCTOT",
+		"field": "INCTOT",
 		"buckets": [
 			[-9999999, -1, "Less than $0"],
 			[0, 30000, "$0-30,000"],
@@ -140,7 +139,7 @@
 		]
 	},
 	"household_income_high": {
-		"fields": "HHINCOME",
+		"field": "HHINCOME",
 		"buckets": [
 			[-9999999, -1, "Less than $0"],
 			[0, 499999, "$0-499,999"],
@@ -150,7 +149,7 @@
 		]
 	},
 	"individual_income_high": {
-		"fields": "INCTOT",
+		"field": "INCTOT",
 		"buckets": [
 			[-9999999, -1, "Less than $0"],
 			[0, 499999, "$0-499,999"],

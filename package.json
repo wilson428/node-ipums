@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TimeMagazine/node-ipums"
+    "url": "https://github.com/wilson428/node-ipums"
   },
   "keywords": [
     "IPUMS",
@@ -19,10 +19,10 @@
   "author": "Chris Wilson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TimeMagazine/node-ipums/issues"
+    "url": "https://github.com/wilson428/node-ipums/issues"
   },
   "dependencies": {
     "minimist": "^1.1.1"
   },
-  "homepage": "https://github.com/TimeMagazine/node-ipums"
+  "homepage": "https://github.com/wilson428/node-ipums"
 }

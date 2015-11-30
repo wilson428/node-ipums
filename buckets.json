@@ -60,6 +60,13 @@
 			[ 21, 200, "21 and over"    ]			
 		]
 	},
+	"age_over30": {
+		"field": "AGE",
+		"buckets": [
+			[ 0, 30, "30 and under"    ],
+			[ 21, 200, "Over 30"    ]			
+		]
+	},
 	"age_over65": {
 		"field": "AGE",
 		"buckets": [

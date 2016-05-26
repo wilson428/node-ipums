@@ -152,6 +152,7 @@ To get a correct seven-digit PUMA code, all you need to do is include the variab
 
 Note: PUMAs have names, which you can find in [pumas.json](pumas.json). They tend to be long, like "New Castle County (South)--Middletown Town, Bear & Glasgow PUMA; Delaware," so it would dramatically increase the file size to include them. But they're here if you need them.
 
+If you're using `PUMASUPR`, the pre-2012 area definitions, you should still pass `--full_pumas` even though they do not need a state prefix. This ensures that no leading zeros are exorcised.
 
 ## Working with extracted data
 

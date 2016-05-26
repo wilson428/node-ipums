@@ -1,0 +1,19 @@
+{
+	"marriage_status": {
+		"field": "MARST",
+		"buckets": [
+			[1, 2, "Married"],
+			[3, 4, "Separated or Divorced"],
+			[5, 5, "Widowed"],
+			[6, 6, "Never married"]
+		]
+	},
+	"marriage_ever": {
+		"field": "MARST",
+		"buckets": [
+			[1, 2, "Married"],
+			[3, 5, "Separated, divorced or widowed"],
+			[6, 6, "Never married"]
+		]
+	}
+}

@@ -1,6 +1,8 @@
 node-ipums
 ==========
 
+v0.0.2
+
 Parse IPUMS files with Node to create clean, human-readable data files.
 
 [![Build Status](https://travis-ci.org/TimeMagazine/node-ipums.png)](https://travis-ci.org/TimeMagazine/node-ipums)

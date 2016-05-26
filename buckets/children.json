@@ -1,0 +1,17 @@
+{
+	"children_any": {
+		"field": "NCHILD",
+		"buckets": [
+			[0, 0, "0"],
+			[1, 9, "1+"]
+		]
+	},
+	"children_2+": {
+		"field": "NCHILD",
+		"buckets": [
+			[0, 0, "0"],
+			[1, 1, "1"],
+			[2, 9, "2+"]
+		]
+	}	
+}

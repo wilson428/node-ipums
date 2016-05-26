@@ -1,0 +1,29 @@
+{
+	"race": {
+		"field": "RACE",
+		"buckets": [
+			[1,1, "White"],
+			[2,2, "Black"],
+			[3,3, "American Indian"],
+			[4,6, "Asian"],
+			[7,9, "Multiracial"]
+		]
+	},
+	"race_major": {
+		"field": "RACE",
+		"buckets": [
+			[1,1, "White"],
+			[2,2, "Black"],
+			[3,3, "Other"],
+			[4,6, "Asian"],
+			[7,9, "Other"]
+		]
+	},
+	"hispanic": {
+		"field": "HISPAN",
+		"buckets": [
+			[0, 0, "No"],
+			[1, 4, "Yes"]
+		]
+	}
+}

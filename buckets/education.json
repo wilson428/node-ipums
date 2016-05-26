@@ -1,0 +1,22 @@
+{
+	"education_degree": {
+		"field": "EDUCD",
+		"buckets": [
+			[  0, 61, "Less than high school" ],
+			[ 62, 64, "High school or equivalent"    ],
+			[ 65, 80, "Some college, no degree"    ],
+			[ 81, 83, "Associate's degree"    ],
+			[ 101, 101, "Bachelor's degree"    ],
+			[ 114, 114, "Master's degree"    ],
+			[ 115, 115, "Professional degree"    ],
+			[ 116, 116, "Doctoral degree"    ]
+		]
+	},
+	"education_college": {
+		"field": "EDUCD",
+		"buckets": [
+			[  0, 83, "No college degree" ],
+			[ 101, 116, "College degree"    ]
+		]
+	}
+}

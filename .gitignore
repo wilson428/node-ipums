@@ -38,3 +38,4 @@ test/usa_00028.tsv
 test/usa_00028_grouped.json
 test/usa_00028_grouped.tsv
 test/usa_00028_reduced.json
+test/usa_00028.sql
